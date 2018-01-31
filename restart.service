@@ -1,0 +1,14 @@
+[Unit]
+Description=server
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/lorawan_server/
+ExecStart=/root/lorawan_server/restart_lorawan.sh
+SyslogIdentifier=restart_lorawan
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
